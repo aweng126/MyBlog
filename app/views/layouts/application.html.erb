@@ -38,9 +38,11 @@
   <div class="container">
     <nav class="blog-nav">
       <a class="blog-nav-item active" href="#">Home</a>
-      <a class="blog-nav-item" href="#">New features</a>
-      <a class="blog-nav-item" href="#">Press</a>
-      <a class="blog-nav-item" href="#">New hires</a>
+
+      <% Category.all.each do |category| %>
+          <%= link_to category.name,posts_path(category: category.id) ,class: "blog-nav-item"  %>
+      <% end %>
+
       <a class="blog-nav-item" href="#">About</a>
     </nav>
   </div>

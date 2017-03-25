@@ -12,7 +12,15 @@
 
         <div class="blog-post">
           <h2 class="blog-post-title"> <%= post.title %></h2>
-          <p class="blog-post-meta"><%= l post.published_at %> <a href="#"><%= post.author %></a></p>
+          <p class="blog-post-meta"><%= l post.published_at %> by <a href="#"><%= post.author %></a>
+            <br>
+
+            <% post.categories.each do |category| %>
+                <span class="label label-default"><%= category.name %></span>
+                <%puts category.name %>
+            <% end %>
+          </p>
+
           <%= post.content %>
         </div><!-- /.blog-post -->
     <% end %>

@@ -8,6 +8,7 @@ resource :posts
 通过下面这条语句，来设定主页
 localhost：3000访问的主页
 =end
-root "posts#index"
+
+root "posts#show"
 
 end
