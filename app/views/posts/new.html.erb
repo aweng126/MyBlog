@@ -1,0 +1,25 @@
+<h1>kingwen's blog</h1>
+
+<%= form_for :post,url:  posts_path do |f| %>
+
+    <p>
+      <%= f.label :title%><br>
+      <%= f.text_field :title %>
+    </p>
+
+    <p>
+      <%= f.label :author%><br>
+      <%= f.text_field :author %>
+    </p>
+
+    <p>
+      <%= f.label :content%><br>
+      <%= f.text_field :content  %>
+    </p>
+
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+<%end%>

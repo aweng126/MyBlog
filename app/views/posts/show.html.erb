@@ -12,7 +12,7 @@
 
         <div class="blog-post">
           <h2 class="blog-post-title"> <%= post.title %></h2>
-          <p class="blog-post-meta"><%= l post.published_at %> by <a href="#"><%= post.author %></a>
+          <p class="blog-post-meta"><%= l Time.now %> by <a href="#"><%= post.author %></a>
             <br>
 
             <% post.categories.each do |category| %>

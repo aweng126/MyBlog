@@ -11,4 +11,6 @@ localhost：3000访问的主页
 
 root "posts#show"
 
+
+
 end
