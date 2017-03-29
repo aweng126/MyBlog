@@ -11,6 +11,8 @@ localhost：3000访问的主页
 
 root "posts#show"
 
+get "/home",to: "posts#show"
 
+  get "/about",to: "posts#about"
 
 end

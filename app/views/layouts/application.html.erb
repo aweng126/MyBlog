@@ -31,18 +31,18 @@
 <div class="blog-masthead">
   <div class="container">
     <nav class="blog-nav">
-      <a class="blog-nav-item active" href="#">Home</a>
+      <a class="blog-nav-item active" href="home">Home</a>
 
       <% Category.all.each do |category| %>
           <%= link_to category.name,posts_path(category: category.id) ,class: "blog-nav-item"  %>
       <% end %>
 
-      <a class="blog-nav-item" href="#">About</a>
+      <a class="blog-nav-item" href="about">About</a>
     </nav>
 
     <div class="blog-header">
-      <h1 class="blog-title">The Bootstrap Blog</h1>
-      <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+      <h1 class="blog-title">The kingwen's Blog</h1>
+      <p class="lead blog-description">The test of creating a blog with Bootstrap and ruby on rails.</p>
     </div>
 
 
