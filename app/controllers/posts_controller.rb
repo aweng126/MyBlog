@@ -10,7 +10,12 @@ class PostsController < ApplicationController
        @posts = Post.joins(:categories).where(categories: {id:params[:category]})
       puts 'category'
     elsif  params[:id]
-       @posts = Post.joins(:categories).where(posts: {id:params[:id]})
+=begin
+      由于默认在前台展示的时候是通过each循环来进行遍历的，所以这里的返回值应该是一个数组
+=end
+       # @posts = Post.joins(:categories).where(posts: {id:params[:id]})
+        @posts=[]
+        @posts << Post.find(params[:id])
       puts 'id'
     else
       @posts=Post.all
