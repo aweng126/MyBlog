@@ -1,6 +1,7 @@
-<h1>kingwen's blog</h1>
 
-<%= form_for :post,url:  posts_path do |f| %>
+<h1>Editing article</h1>
+
+<%= form_for(@post)  do |f| %>
 
     <p>
       <%= f.label :title%><br>
@@ -22,6 +23,6 @@
       <%= f.submit %>
     </p>
 
-    <%= link_to 'Back', posts_path %>
+<% end %>
 
-<%end%>
+<%= link_to 'Back', posts_path %>

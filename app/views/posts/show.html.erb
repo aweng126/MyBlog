@@ -1,7 +1,4 @@
-<div class="blog-header">
-  <h1 class="blog-title">The Bootstrap Blog</h1>
-  <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
-</div>
+
 
 <div class="row">
 
@@ -11,17 +8,17 @@
     <% @posts.each  do|post| %>
 
         <div class="blog-post">
-          <h2 class="blog-post-title"> <%= post.title %></h2>
-          <p class="blog-post-meta"><%= l Time.now %> by <a href="#"><%= post.author %></a>
+          <h2 class="blog-post-title">  <%= post.title %>  </h2>
+          <p class="blog-post-meta"><%= l Time.now %> by <a href="#"><%= post.id%></a>
             <br>
-
-            <% post.categories.each do |category| %>
-                <span class="label label-default"><%= category.name %></span>
-                <%puts category.name %>
-            <% end %>
           </p>
 
           <%= post.content %>
+
+          <br>
+          <td><%= link_to 'Show', controller: "posts",action: "show", id:post.id %></td>
+          <td><%= link_to 'Edit', controller:"posts",action: "edit",id:post.id %></td>
+          <td><%= link_to 'Delete',post,:method => :delete ,:class => "delete",:confirm => "are you sure?"%></td>
         </div><!-- /.blog-post -->
     <% end %>
 
