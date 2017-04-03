@@ -1,21 +1,16 @@
 class PostsController < ApplicationController
 
   def index
-    @post=Post.all
-  end
-
-
-  def show
     if params[:category]
-       @posts = Post.joins(:categories).where(categories: {id:params[:category]})
+      @posts = Post.joins(:categories).where(categories: {id:params[:category]})
       puts 'category'
-    elsif  params[:id]
+    elsif  params[:post_id]
 =begin
       由于默认在前台展示的时候是通过each循环来进行遍历的，所以这里的返回值应该是一个数组
 =end
-       # @posts = Post.joins(:categories).where(posts: {id:params[:id]})
-        @posts=[]
-        @posts << Post.find(params[:id])
+      # @posts = Post.joins(:categories).where(posts: {id:params[:id]})
+      @posts=[]
+      @posts << Post.find(params[:post_id])
       puts 'id'
     else
       @posts=Post.all
@@ -24,25 +19,31 @@ class PostsController < ApplicationController
     end
   end
 
-  def new
 
+  def show
+    @post=Post.find_by_id(params[:id])
+    pp @post
+  end
+
+  def new
   end
 
   def create
     @post=Post.new(post_params)
+    # pp @post
     @post.save
-    redirect_to @post
+    redirect_to post_url(@post)
     # redirect_to :action => "show", :id => @post.__id__
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.find_by_id(params[:id])
   end
 
 
 
   def update
-     @post = Post.find(params[:id])
+     @post = Post.find_by_id(params[:id])
 
      # params[:post] .each do|key,value|
      #   puts key,':',value,'######'
@@ -60,12 +61,11 @@ class PostsController < ApplicationController
   end
 
   def about
-
   end
 
   def destroy
 
-    @post=Post.find(params[:id])
+    @post=Post.find_by_id(params[:id])
     @post.destroy
 
     render 'index'
@@ -74,7 +74,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    # params.store("published_at",Time.now)
     params.require(:post).permit(:title,:author,:content)
     # pp params
   end
