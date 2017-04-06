@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name£»string: MyString
+  pass£ºstring: MyString
+
+two:
+  name£»string: MyString
+  pass£ºstring: MyString

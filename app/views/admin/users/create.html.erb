@@ -1,0 +1,35 @@
+
+<title>Signin Template for Bootstrap</title>
+
+<form class="form-signin">
+  <h2 class="form-signin-heading">Please sign in</h2>
+
+  <%= form_for :user,url:  admin_users_path do |f| %>
+
+      <p>
+        <%= f.label :name%><br>
+        <%= f.text_field :name ,class:"form-control" %>
+      </p>
+
+      <p>
+        <%= f.label :pass%><br>
+        <%= f.text_field :pass,class:"form-control" %>
+      </p>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+
+      <p>
+        <%= f.submit'Sign in', :class=>"btn btn-lg btn-primary btn-block" %>
+      </p>
+
+      <%= link_to 'Back', posts_path %>
+
+  <%end%>
+
+</form>
+
+</div> <!-- /container -->
