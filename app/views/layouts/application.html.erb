@@ -5,24 +5,15 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="icon" href="https://getbootstrap.com/favicon.ico">
 
   <title>kingwen's test blog</title>
 
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
-  <!-- Bootstrap core CSS -->
-  <link href="https://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-  <link href="https://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-  <!-- Custom styles for this template -->
-  <link href="https://getbootstrap.com/examples/blog/blog.css" rel="stylesheet">
+  <%= stylesheet_link_tag "application.css.sass"%>
+  <%= stylesheet_link_tag "bootstrap.min.css"%>
+  <%= stylesheet_link_tag "blog.css"%>
 
 </head>
 
@@ -49,11 +40,12 @@
 
 </div>
 
+
 <div class="container">
-
  <%= yield %>
-
 </div>
+
+
 
 <footer class="blog-footer">
   <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
