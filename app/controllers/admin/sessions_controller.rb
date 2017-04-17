@@ -14,7 +14,7 @@ class Admin::SessionsController < ApplicationController
     # 需要进行进一步修改，搜索条件进行调整，通过name和pass一次搜索。
     @user=User.find_by_name(params[:name])
     if(@user.pass==params[:pass])
-       redirect_to posts_path
+       redirect_to admin_posts_url
     end
 
   end

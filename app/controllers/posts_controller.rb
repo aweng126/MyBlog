@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def index
     if params[:category]
       @posts = Post.joins(:categories).where(categories: {id:params[:category]})
@@ -23,58 +22,6 @@ class PostsController < ApplicationController
   def show
     @post=Post.find_by_id(params[:id])
     pp @post
-  end
-
-  def new
-  end
-
-  def create
-    @post=Post.new(post_params)
-    # pp @post
-    @post.save
-    redirect_to post_url(@post)
-    # redirect_to :action => "show", :id => @post.__id__
-  end
-
-  def edit
-    @post = Post.find_by_id(params[:id])
-  end
-
-  def update
-     @post = Post.find_by_id(params[:id])
-
-     # params[:post] .each do|key,value|
-     #   puts key,':',value,'######'
-     # end
-
-     @post.author=params[:post]["author"]
-     @post.content=params[:post]["content"]
-     @post.title=params[:post]["title"]
-
-    if @post.save
-      redirect_to  @post
-    else
-      render 'edit'
-    end
-  end
-
-
-  def about
-  end
-
-  def destroy
-
-    @post=Post.find_by_id(params[:id])
-    @post.destroy
-
-    render 'index'
-
-  end
-
-  private
-  def post_params
-    params.require(:post).permit(:title,:author,:content)
-    # pp params
   end
 
 end

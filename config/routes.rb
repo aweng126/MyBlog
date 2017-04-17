@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'posts/index'
+
+  get 'post/index'
+
   resources :sessions
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -7,12 +11,12 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :user
     resource :sessions
-=begin
-    ,only: [:new,:create]
-=end
+    get "posts",to:"posts#index"
+    resource :posts
+
+
     get "",to:"sessions#new"
     post "",to:"sessions#create"
-
   end
 
   get"/posts/home",to:redirect("/posts")

@@ -1,0 +1,42 @@
+<div class="col-sm-8 blog-main">
+
+      <div class="blog-post">
+        <h2 class="blog-post-title">  <%= @post.title %>  </h2>
+        <p class="blog-post-meta"><%= l Time.now %> by <a href="#"><%= @post.author%></a>
+          <br>
+        </p>
+
+        <%= @post.content %>
+        <br>
+
+        <h2>Comments</h2>
+        <% @post.comments.each do |comment| %>
+            <p>
+              <strong>Commenter:</strong>
+              <%= comment.commenter  %>
+            </p>
+
+            <p>
+              <strong>Comment:</strong>
+              <%= comment.body  %>
+            </p>
+        <% end %>
+
+        <h2>Add a comment:</h2>
+        <%= form_for([@post, @post.comments.build]) do |f| %>
+            <p>
+              <%= f.label :commenter %><br>
+              <%= f.text_field :commenter %>
+            </p>
+            <p>
+              <%= f.label :body %><br>
+              <%= f.text_area :body %>
+            </p>
+            <p>
+              <%= f.submit %>
+            </p>
+        <% end %>
+
+      </div><!-- /.blog-post -->
+
+</div>
