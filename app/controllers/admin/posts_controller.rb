@@ -2,7 +2,7 @@ class Admin::PostsController < ApplicationController
 
   def index
     if params[:category]
-      @posts = Post.joins(:categories).where(categories: {id:params[:category]})
+      @posts = Post.joins(:categories).where(categories: {id:params[:category]}).paginate(:page => params[:page], :per_page => 5)
       puts 'category'
     elsif  params[:post_id]
 =begin
@@ -13,7 +13,7 @@ class Admin::PostsController < ApplicationController
       @posts << Post.find(params[:post_id])
       puts 'id'
     else
-      @posts=Post.all
+      @posts=Post.all.paginate(:page => params[:page], :per_page => 5)
       puts 'all'
       puts params.inspect
     end
@@ -33,6 +33,9 @@ class Admin::PostsController < ApplicationController
     # pp @post
     @post.save
     redirect_to post_url(@post)
+    # action: show ,id: @post.id
+    # admin_post_url(@post)
+    # admin_post_url(@post)
   end
 
   def edit

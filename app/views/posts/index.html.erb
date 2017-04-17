@@ -8,14 +8,13 @@
     <% @posts.each  do|post| %>
 
         <div class="blog-post">
-          <!--<h2 class="blog-post-title">  <%= post.title %>  </h2>-->
 
-          <h2 class="blog-post-title">  <%= link_to post.title,controller: "posts",action: "show",id:post.id %>  </h2>
-
+          <h2 class="blog-post-title">  <%= link_to post.title,controller: "posts",action: "show", id:post.id %>  </h2>
 
           <p class="blog-post-meta"><%= l Time.now %> by <a href="#"><%= post.id%></a>
             <br>
           </p>
+
           <%= post.content %>
           <br>
 
