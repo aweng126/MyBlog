@@ -1,30 +1,12 @@
 <h1>New Session</h1>
 
-<%= form_tag session_path do |f| %>
+<%= form_tag admin_sessions_path do -%>
+    <label for="login">Login</label>
+    <%= text_field_tag :name, params[:user] ,class:"form-control"%>
+    <label for="password">Password</label>
+    <%= password_field_tag :pass, params[:pass] ,class:"form-control"%>
 
-    <p>
-      <%= f.label :name%><br>
-      <%= f.text_field :name ,class:"form-control" %>
-    </p>
-
-    <p>
-      <%= f.label :pass%><br>
-      <%= f.text_field :pass,class:"form-control" %>
-    </p>
-
-    <div class="checkbox">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-
-    <p>
-      <%= f.submit'Sign in', :class=>"btn btn-lg btn-primary btn-block" %>
-    </p>
+    <%= submit_tag "Login",class:"form-control" %>
+<% end %>
 
 
-<%= link_to 'Back', sessions_path %>
-
-<%end%>
-
-</form>
