@@ -15,12 +15,13 @@ class Admin::UsersController < ApplicationController
   # GET /users/new
   def new
     puts "newnwenwenwenwenwenwne"
-    @user = User.new
+    #@user = User.new
   end
 
   # GET /users/1/edit
   def edit
   end
+
 
   # POST /users
   # POST /users.json
@@ -36,8 +37,6 @@ class Admin::UsersController < ApplicationController
       puts "22222222222"
       render 'new'
     end
-
-
 
     @user = User.new(user_params)
 
