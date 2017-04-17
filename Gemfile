@@ -56,3 +56,6 @@ gem 'mysql2', '>= 0.3.18', '< 0.5'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
+#分页插件
+gem 'will_paginate', '~> 3.1.0'
+
