@@ -1,0 +1,12 @@
+<h1>New Session</h1>
+
+<%= form_tag admin_sessions_path do -%>
+    <label for="login">Login</label>
+    <%= text_field_tag :name, params[:user] ,class:"form-control"%>
+    <label for="password">Password</label>
+    <%= password_field_tag :pass, params[:pass] ,class:"form-control"%>
+
+    <%= submit_tag "Login",class:"form-control" %>
+<% end %>
+
+

@@ -14,4 +14,5 @@ Rails.application.config.assets.version = '1.0'
 #预编译静态资源文件
 Rails.application.config.assets.precompile += %w( bootstrap.min.css )
 Rails.application.config.assets.precompile += %w( blog.css )
+Rails.application.config.assets.precompile += %w( signin.css )
 
