@@ -56,7 +56,7 @@ class Admin::PostsController < ApplicationController
      @post.title=params[:post]["title"]
 
     if @post.save
-      redirect_to controller: "admin/posts",action: "show"
+      redirect_to controller: "admin/posts",action: "show",id: @post.id
       # admin_posts_path(@post)
     else
       render 'edit'
