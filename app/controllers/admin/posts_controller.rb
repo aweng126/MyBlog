@@ -43,6 +43,8 @@ class Admin::PostsController < ApplicationController
   end
 
   def update
+    pp params[:id]
+
      @post = Post.find_by_id(params[:id])
 
      # params[:post] .each do|key,value|
@@ -54,7 +56,8 @@ class Admin::PostsController < ApplicationController
      @post.title=params[:post]["title"]
 
     if @post.save
-      redirect_to  @post
+      redirect_to controller: "admin/posts",action: "show"
+      # admin_posts_path(@post)
     else
       render 'edit'
     end
