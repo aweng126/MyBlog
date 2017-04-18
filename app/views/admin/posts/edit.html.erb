@@ -1,7 +1,7 @@
 
 <h1>Editing article</h1>
 
-<%= form_for(@post)  do |f| %>
+<%= form_for @post, url:admin_posts_url(@post) do |f| %>
 
     <p>
       <%= f.label :title%><br>
@@ -25,4 +25,4 @@
 
 <% end %>
 
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', admin_posts_path %>

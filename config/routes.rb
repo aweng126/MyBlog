@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'posts/index'
+  # get 'posts/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   namespace :admin do
     resources :user
     resource :sessions
-    get "posts",to:"posts#index"
+
+    get 'post/:id',to:"posts#show"
+     get 'posts',to:"posts#index"
     resource :posts
+
 
 
     get "",to:"sessions#new"
@@ -19,7 +22,8 @@ Rails.application.routes.draw do
           #设置对应的资源控制符合rest风格
           # 在articals资源中创建comments资源，这种方式称为嵌套资源。表明文章和评论之间层级关系的另一种形式。
   resources :posts  do
-     resources :comments ,only:[:index ,:show]
+     resources :comments
+     # ,only:[:index ,:show]
   end
 
 

@@ -1,4 +1,12 @@
 class PostsController < ApplicationController
+  @@pagenum=1
+
+
+  def show
+    @post=Post.find_by_id(params[:id])
+    pp @post
+  end
+
   def index
     if params[:category]
       @posts = Post.joins(:categories).where(categories: {id:params[:category]}).paginate(:page => params[:page], :per_page => 5)
@@ -8,16 +16,13 @@ class PostsController < ApplicationController
       @posts << Post.find(params[:post_id])
       puts 'id'
     else
-      @posts=Post.all.paginate(:page => params[:page], :per_page => 5)
+      @posts=Post.all.paginate(:page => @@pagenum, :per_page => 5)
       # Post.paginate(:page => params[:page], :per_page => 30)
       puts 'all'
       puts params.inspect
     end
   end
 
-  def show
-    @post=Post.find_by_id(params[:id])
-    pp @post
-  end
+
 
 end
