@@ -13,7 +13,7 @@ class Admin::PostsController < ApplicationController
       @posts << Post.find(params[:post_id])
       puts 'id'
     else
-      @posts=Post.all.paginate(:page => params[:page], :per_page => 5)
+      @posts=Post.all  #.paginate(:page => params[:page], :per_page => 5)
       puts 'all'
       puts params.inspect
     end
