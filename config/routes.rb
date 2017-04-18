@@ -11,12 +11,12 @@ Rails.application.routes.draw do
   end
 
 
-  constraints(id:/\d/) do
+  constraints(id:/\d*/) do
         namespace :admin do
-           get 'posts',to:"posts#index"
            get 'posts/edit/:id',to:"posts#edit"
            get 'posts/:id',to:"posts#show"
-          resource :posts
+           get 'posts',to:"posts#index"
+           resource :posts
           end
  end
 

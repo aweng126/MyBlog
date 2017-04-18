@@ -31,11 +31,18 @@ class Admin::PostsController < ApplicationController
   def create
     @post=Post.new(post_params)
     # pp @post
-    @post.save
-    redirect_to post_url(@post)
-    # action: show ,id: @post.id
-    # admin_post_url(@post)
-    # admin_post_url(@post)
+   if  @post.save
+     @a =  @post.id
+     redirect_to  controller: "admin/posts",action: "show",id: @post.id
+
+     # action: show ,id: @a       进入的是post？id=33界面。进入index界面
+     # @post 进入post前台界面
+     # action: show ,id: @post.id    次数id为空，在建立我们的数据模型的时候并没有添加id属性，所以不能直接使用
+    # admin_posts_url(@post)          url位小数点格式，
+    # admin_posts_path(@post)
+    # controller: "admin/posts",action: "show",id: @post.id
+
+   end
   end
 
   def edit
@@ -56,8 +63,8 @@ class Admin::PostsController < ApplicationController
      @post.title=params[:post]["title"]
 
     if @post.save
-      redirect_to controller: "admin/posts",action: "show",id: @post.id
-      # admin_posts_path(@post)
+      redirect_to     controller: "admin/posts",action: "show",id: @post.id
+
     else
       render 'edit'
     end
