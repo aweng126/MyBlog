@@ -13,7 +13,7 @@ class Admin::PostsController < ApplicationController
       @posts << Post.find(params[:post_id])
       puts 'id'
     else
-      @posts=Post.all  #.paginate(:page => params[:page], :per_page => 5)
+      @posts=Post.all .paginate(:page => params[:page], :per_page => 10)
       puts 'all'
       puts params.inspect
     end
@@ -75,6 +75,8 @@ class Admin::PostsController < ApplicationController
   end
 
   def destroy
+
+    pp params[:id]
 
     @post=Post.find_by_id(params[:id])
     @post.destroy
