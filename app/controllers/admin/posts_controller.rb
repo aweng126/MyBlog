@@ -87,6 +87,13 @@ class Admin::PostsController < ApplicationController
      @post.content=params[:post]["content"]
      @post.title=params[:post]["title"]
 
+     # 更新本篇文章的分类
+    params[:categories].each {|category|
+      category1=Category.find(category)
+      @post.categories << category1
+
+    }
+
     if @post.save
       redirect_to     controller: "admin/posts",action: "show",id: @post.id
 
