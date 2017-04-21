@@ -30,7 +30,32 @@ class Admin::PostsController < ApplicationController
 
   def create
     @post=Post.new(post_params)
-    # pp @post
+
+    # 更新本篇文章的分类
+      params[:categories].each {|category|
+
+        category1=Category.find(category)
+        @post.categories << category1
+
+     }
+
+=begin
+    i=1
+    while i<params[:categories].length
+      @post.categories=params[:categories].gets(i)
+      i+=1
+    end
+=end
+
+=begin
+    for i in params[:categories]
+      pp i.is_a?(String)
+      pp i.to_i
+      @post.categories=i.to_i
+
+    end
+=end
+
    if  @post.save
      @a =  @post.id
      redirect_to  controller: "admin/posts",action: "show",id: @post.id

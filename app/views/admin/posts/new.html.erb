@@ -12,6 +12,13 @@
       <%= f.text_field :author %>
     </p>
 
+    <!--选择分类界面-->
+    <% Category.all.each do |category| %>
+        <%= check_box_tag 'categories[]', category.id%>
+        <%= label_tag category.name %>
+    <% end %>
+
+
     <p>
       <%= f.label :content%><br>
 
