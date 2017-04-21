@@ -14,7 +14,13 @@
 
     <p>
       <%= f.label :content%><br>
-      <%= f.text_field :content  %>
+
+
+      <%= f.kindeditor :content ,:window_onload => true  %>
+
+ <!--     <%= kindeditor_tag :content %>-->
+
+
     </p>
 
 
