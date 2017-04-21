@@ -1,0 +1,18 @@
+
+
+
+
+
+<!--新时代的form表单，成功解决构造函数需要是hash的问题。"category"=>{"name"=>"123"}-->
+<%= form_for :category,controller:"admin/categories",action:"create" do |f| %>
+
+    <p>
+      <%= f.label :name%><br>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+ <% end %>

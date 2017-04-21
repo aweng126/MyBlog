@@ -1,6 +1,4 @@
 class PostsController < ApplicationController
-  @@pagenum=1
-
 
   def show
     @post=Post.find_by_id(params[:id])
