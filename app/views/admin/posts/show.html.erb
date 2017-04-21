@@ -6,10 +6,20 @@ c<div class="col-sm-8 blog-main">
           <br>
         </p>
 
-        <div>
-          <%= @post.content %>
-        </div>
 
+
+        <!--成功解决kindeditor得到的文档显示时出现html标签而不按照标签所对应格式进行显示-->
+        <!--方法一-->
+        <%=  @post.content.html_safe %>
+        <!--方法2-->
+       <!-- <%= raw @post.content %>-->
+         <%= @post.content %>-->
+
+       <!-- <script type="text/javascript">
+
+            var contents=" \" " + <%= @post.content %> +" \" "
+            document.write(contents);
+        </script>-->
 
 
         <br>
