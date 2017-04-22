@@ -197,8 +197,8 @@ body {
  * Lista de Comentarios
  =======================*/
 .comments-container {
-    margin: 60px auto 15px;
-    width: 768px;
+    margin: 60px 0px 15px 0px;
+    /*width: 768px;*/
 }
 
 .comments-container h1 {
@@ -279,6 +279,7 @@ body {
  * Avatar
  ---------------------------*/
 .comments-list .comment-avatar {
+
     width: 65px;
     height: 65px;
     position: relative;
@@ -315,13 +316,17 @@ body {
  * Caja del Comentario
  ---------------------------*/
 .comments-list .comment-box {
-    width: 680px;
-    float: right;
+
+    /*width: 680px;*/
+    /*float: right;*/
+    margin-left: 85px;
     position: relative;
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
     -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
     box-shadow: 0 1px 1px rgba(0,0,0,0.15);
 }
+
+
 
 .comments-list .comment-box:before, .comments-list .comment-box:after {
     content: '';
@@ -399,6 +404,7 @@ body {
     -webkit-border-radius: 0 0 4px 4px;
     -moz-border-radius: 0 0 4px 4px;
     border-radius: 0 0 4px 4px;
+
 }
 
 .comment-box .comment-name.by-author, .comment-box .comment-name.by-author a {color: #03658c;}
