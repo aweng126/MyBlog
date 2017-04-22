@@ -2,14 +2,14 @@
 
       <div class="blog-post">
         <h2 class="blog-post-title">  <%= @post.title %>  </h2>
-        <p class="blog-post-meta"><%= l Time.now %> by <a href="#"><%= @post.author%></a>
+        <p class="blog-post-meta"><%= l @post.published_at %> by <a href="#"><%= @post.author%></a>
           <br>
         </p>
 
         <%= @post.content %>
         <br>
 
-        <h2>Comments</h2>
+     <!--   <h2>Comments</h2>
         <% @post.comments.each do |comment| %>
             <p>
               <strong>Commenter:</strong>
@@ -20,45 +20,42 @@
               <strong>Comment:</strong>
               <%= comment.body  %>
             </p>
-        <% end %>
+        <% end %>-->
 
         <div class="container">
           <!--<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">-->
           <div class="row">
             <!-- Contenedor Principal -->
             <div class="comments-container">
-              <h1>Comentarios <a href="http://creaticode.com">creaticode.com</a></h1>
+              <h1>Comentarios</h1>
 
               <ul id="comments-list" class="comments-list">
                 <li>
                   <div class="comment-main-level">
 
                     <% @post.comments.each do |comment| %>
-                        <% end%>
 
                     <!-- Avatar -->
-                    <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
+                    <div class="comment-avatar"><img src="http://upload-images.jianshu.io/upload_images/1599743-c5eecd3e19396bc3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></div>
                     <!-- Contenedor del Comentario -->
                     <div class="comment-box">
                       <div class="comment-head">
-                        <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
+                        <h6 class="comment-name"><a href="http://creaticode.com/blog"><%= comment.commenter %></a></h6>
                         <span>hace 10 minutos</span>
                         <i class="fa fa-reply"></i>
                         <i class="fa fa-heart"></i>
                       </div>
                       <div class="comment-content">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                          <%= comment.body %>
                       </div>
                     </div>
+                    <% end%>
                   </div>
                 </li>
               </ul>
             </div>
           </div>
         </div>
-
-
-
 
         <h2>Add a comment:</h2>
         <%= form_for([@post, @post.comments.build]) do |f| %>
