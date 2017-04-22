@@ -87,6 +87,8 @@ class Admin::PostsController < ApplicationController
      @post.content=params[:post]["content"]
      @post.title=params[:post]["title"]
 
+     @post.categories.clear
+
      # 更新本篇文章的分类
     params[:categories].each {|category|
       category1=Category.find(category)
