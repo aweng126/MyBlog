@@ -94,12 +94,10 @@ class Admin::PostsController < ApplicationController
     params[:categories].each {|category|
       category1=Category.find(category)
       @post.categories << category1
-
     }
 
     if @post.save
-      redirect_to     controller: "admin/posts",action: "show",id: @post.id
-
+      redirect_to   controller: "admin/posts",action: "show",id: @post.id
     else
       render 'edit'
     end
@@ -109,8 +107,6 @@ class Admin::PostsController < ApplicationController
   def about
   end
 
-
-
   def destroy
     pp params[:id]
     pp "post  destroy"
@@ -118,6 +114,7 @@ class Admin::PostsController < ApplicationController
     @post.destroy
     render 'index'
   end
+
 
   private
   def post_params

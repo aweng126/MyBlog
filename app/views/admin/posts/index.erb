@@ -20,15 +20,8 @@
 
             <td><%= link_to 'Show', action: "show", id:post.id %></td>
             <td><%= link_to 'Edit', controller:"admin/posts",action: "edit",id:post.id ,'data-no-turbolink' => true%></td>
+            <td> <%= link_to 'Delete',admin_posts_url ,:method => :delete,id: post.id,:confirm => "are you sure?"%></td>
 
-            <!--没有参数id，从而导致后面param[:id]为空-->
-            <!--<td><%= link_to 'Delete',admin_posts_path(post) ,:method => :delete,id: post.id,:confirm => "are you sure?"%></td>-->
-
-            <!--posts.4 确实进行了delete操作，但是.4不正常，应该是/4-->
-<!--            <td><%= link_to 'Delete1',admin_posts_url(post),:method => :delete,:remote => true,:confirm => "are you sure?"%></td>-->
-
-            <!--admin/posts?id=4&method=delete 没有什么用-->
-            <td><%=  link_to '删除1', admin_posts_url(post),method: :delete %></td>
           </tr>
           <% end %>
         </table>
@@ -46,6 +39,7 @@
       <ol class="list-unstyled">
         <li><%= link_to '新建文章', controller: "posts",action: "new" ,'data-no-turbolink' => true %></li>
         <li><%= link_to '新建目录', controller: "admin/categories",action: "new" %></li>
+        <li><%= link_to '友链查看', admin_links_path %></li>
         <li><%= link_to '目录查看', admin_categories_path  %></li>
 
 <!--        <li><a href="#">March 2014</a></li>
@@ -54,14 +48,18 @@
       </ol>
     </div>
 
+
     <div class="sidebar-module">
       <h4>链接</h4>
       <ol class="list-unstyled">
-        <li><a href="https://github.com/aweng126/">GitHub</a></li>
-        <li><a href="http://weibo.com/p/1005055127489064/home">新浪微博</a></li>
-        <li><a href="http://www.jianshu.com/u/4a05ba219654">简书</a></li>
+      <% Link.all.each do |link| %>
+            <%= link_to link.name,link.address %>
+            <br>
+        <% end %>
       </ol>
     </div>
+
+
   </div><!-- /.blog-sidebar -->
 </div><!-- /.row -->
 

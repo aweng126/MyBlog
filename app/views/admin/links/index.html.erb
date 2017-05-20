@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Links</h1>
+<div class="col-sm-8 blog-main">
+  <table class="table table-bordered table-hover" >
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>查看</th>
+      <th>编辑</th>
+      <th>删除</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @links.each do |link| %>
+      <tr>
+        <td><%= link.name %></td>
+        <td><%= link.address %></td>
+        <td><%= link_to 'show', admin_link_path(link) %></td>
+        <td><%= link_to 'Edit', edit_admin_link_path(link) %></td>
+        <td><%= link_to 'Destroy', admin_link_path(link), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  <%= link_to 'New Link', new_admin_link_path %>
+</div>
+<br>
+
+

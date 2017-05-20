@@ -1,0 +1,22 @@
+<h1>Editing Link</h1>
+
+<%= form_for @link, url:{action: "update",id:@link.id}  do |f| %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+
+<%= link_to 'Show', admin_links_path(@link) %> |
+<%= link_to 'Back', admin_links_path %>
