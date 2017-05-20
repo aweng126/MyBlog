@@ -29,19 +29,9 @@
     <div class="sidebar-module">
       <h4>更多资料</h4>
       <ol class="list-unstyled">
-        <li><a href="http://www.linuxidc.com/Linux/2015-10/124373.htm">windows系统环境安装</a></li>
-        <li><a href="http://rubyinstaller.org/">window-rubyinstaller</a></li>
-        <li><a href="http://huacnlee.com/blog/how-to-start-learning-ruby-on-rails/">如何从零开始学会 Ruby on Rails?</a></li>
-        <li><a href="http://cutesunshineriver.iteye.com/blog/809562">Rails入门</a></li>
-        <li><a href="http://www.bagualu.net/wordpress/archives/6396">rails模型</a></li>
-        <li><a href="https://rubygems.org/">rubygems</a></li>
-        <li><a href="http://api.rubyonrails.org/">rails API</a></li>
-        <li><a href="https://guides.ruby-china.org/">rails guides</a></li>
-        <li><a href="https://www.jetbrains.com/help/ruby/2016.3/quick-start-guide.html">IDE - rubymine</a></li>
-        <li><a href="https://rails-practice.com/content/">书籍 - rails实践</a></li>
-        <li><a href="https://railstutorial-china.org/book/">书籍 - rails教程</a></li>
-        <li><a href="https://ihower.tw/rails/environments-and-bundler.html">书籍 - Ruby on Rails 實戰聖經</a></li>
-
+        <% Material.all.each do |material| %>
+          <%= link_to material.name,material.tlink %><br>
+        <% end %>
 
       </ol>
     </div>

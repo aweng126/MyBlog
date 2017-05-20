@@ -1,0 +1,21 @@
+<h1>Editing Material</h1>
+
+<%=  form_for @material, url:{action: "update",id:@material.id} do |f| %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :tlink %>
+      <%= f.text_field :tlink %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+<%= link_to 'Show', admin_material_path(@material) %> |
+<%= link_to 'Back', admin_materials_path %>
