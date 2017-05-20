@@ -14,12 +14,17 @@
       <%= f.text_field :author %>
     </p>
 
-    <!--选择分类界面-->
+<!--    &lt;!&ndash;选择分类界面&ndash;&gt;
     <% Category.all.each do |category| %>
         <%= check_box_tag 'categories[]', category.id%>
         <%= label_tag category.name %>
-    <% end %>
+    <% end %>-->
 
+
+    <% Classify.all.each do |classify| %>
+        <%= check_box_tag 'classifies[]', classify.id%>
+        <%= label_tag classify.name %>
+    <% end %>
 
     <p>
       <%= f.label :content%><br>

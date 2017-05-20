@@ -9,6 +9,9 @@ class PostsController < ApplicationController
     if params[:category]
       @posts = Post.joins(:categories).where(categories: {id:params[:category]}).paginate(:page => params[:page], :per_page => 5)
       puts 'category'
+    elsif params[:classify]
+        @posts = Post.joins(:classifies).where(classifies: {id:params[:classify]}).paginate(:page => params[:page], :per_page => 5)
+        puts 'category'
     elsif  params[:post_id]
       @posts=[]
       @posts << Post.find(params[:post_id])

@@ -90,11 +90,20 @@ class Admin::PostsController < ApplicationController
     
      @post.categories.clear
 
+=begin
      # 更新本篇文章的分类
     params[:categories].each {|category|
       category1=Category.find(category)
       @post.categories << category1
     }
+=end
+
+     # 更新本篇文章的分类
+    params[:classifies].each {|classfy|
+      classfy1=Classify.find(classfy)
+      @post.classifies << classfy1
+    }
+
 
     if @post.save
       redirect_to   controller: "admin/posts",action: "show",id: @post.id

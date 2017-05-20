@@ -13,10 +13,16 @@
     </p>
 
     <!--选择分类界面-->
-    <% Category.all.each do |category| %>
+   <!-- <% Category.all.each do |category| %>
         <%= check_box_tag 'categories[]', category.id%>
         <%= label_tag category.name %>
+    <% end %>-->
+
+    <% Classify.all.each do |classify| %>
+        <%= check_box_tag 'classifies[]', classify.id%>
+        <%= label_tag classify.name %>
     <% end %>
+
 
     <p>
       <%= f.label :content%><br>

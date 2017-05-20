@@ -25,8 +25,12 @@
     <nav class="blog-nav">
       <a class="blog-nav-item active" href="home">Home</a>
 
-      <% Category.all.each do |category| %>
+     <!-- <% Category.all.each do |category| %>
           <%= link_to category.name,posts_path(category: category.id) ,class: "blog-nav-item"  %>
+      <% end %>-->
+
+      <% Classify.all.each do |classify| %>
+          <%= link_to classify.name,posts_path(classify: classify.id) ,class: "blog-nav-item"  %>
       <% end %>
 
       <a class="blog-nav-item" href="about">About</a>
