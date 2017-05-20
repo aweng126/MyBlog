@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     resources :links
     resources :user
     resource :sessions
-    resource :categories
     get "",to:"sessions#new"
     post "",to:"sessions#create"
   end

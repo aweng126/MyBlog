@@ -57,7 +57,6 @@ class Admin::ClassifiesController < ApplicationController
     @classify.destroy
     respond_to do |format|
       format.html { redirect_to admin_classifies_url, notice: 'Classify was successfully destroyed.' }
-
     end
   end
 

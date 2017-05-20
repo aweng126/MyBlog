@@ -32,40 +32,18 @@ class Admin::PostsController < ApplicationController
     @post=Post.new(post_params)
 
     # 更新本篇文章的分类
-      params[:categories].each {|category|
 
-        category1=Category.find(category)
-        @post.categories << category1
+    params[:classifies].each {|classify|
+
+      classify1=Classify.find(classify)
+      @post.classifies << classify1
 
      }
 
-=begin
-    i=1
-    while i<params[:categories].length
-      @post.categories=params[:categories].gets(i)
-      i+=1
-    end
-=end
-
-=begin
-    for i in params[:categories]
-      pp i.is_a?(String)
-      pp i.to_i
-      @post.categories=i.to_i
-
-    end
-=end
 
    if  @post.save
      @a =  @post.id
      redirect_to  controller: "admin/posts",action: "show",id: @post.id
-
-     # action: show ,id: @a       进入的是post？id=33界面。进入index界面
-     # @post 进入post前台界面
-     # action: show ,id: @post.id    次数id为空，在建立我们的数据模型的时候并没有添加id属性，所以不能直接使用
-    # admin_posts_url(@post)          url位小数点格式，
-    # admin_posts_path(@post)
-    # controller: "admin/posts",action: "show",id: @post.id
 
    end
   end
