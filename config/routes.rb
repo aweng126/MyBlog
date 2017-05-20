@@ -23,7 +23,6 @@ Rails.application.routes.draw do
  end
 
   get"/posts/home",to:redirect("/posts")
-  get"/posts/about",to:redirect("/about")
           #设置对应的资源控制符合rest风格
           # 在articals资源中创建comments资源，这种方式称为嵌套资源。表明文章和评论之间层级关系的另一种形式。
   resources :posts  do

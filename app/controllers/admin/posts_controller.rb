@@ -38,7 +38,6 @@ class Admin::PostsController < ApplicationController
         redirect_to  controller: "admin/posts",action: "index"
        end
     end
-    
   end
 
   def new
