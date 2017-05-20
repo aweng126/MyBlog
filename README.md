@@ -52,5 +52,5 @@
         <li><a href="https://railstutorial-china.org/book/">书籍 - rails教程</a></li>
         <li><a href="https://ihower.tw/rails/environments-and-bundler.html">书籍 - Ruby on Rails 實戰聖經</a></li>
 
-7. 在本项目写作过程中碰到的问题和部分文章已经发表在[简书]（http://www.jianshu.com/u/4a05ba219654）上，需要的话可以自行查看
+7. 在本项目写作过程中碰到的问题和部分文章已经发表在[简书](http://www.jianshu.com/u/4a05ba219654)上，需要的话可以自行查看
 
