@@ -3,13 +3,16 @@
     <tr>
       <th>编号</th>
       <th>目录名</th>
+      <th>编辑</th>
+      <th>删除</th>
     </tr>
+
     <% @categories.each  do|category| %>
         <tr>
           <td><%= category.id %></td>
           <td><%= category.name %></td>
 
-          <td><%= link_to 'Edit', edit_admin_categories_path(category) ,'data-no-turbolink' => true%></td>
+          <td><%= link_to 'Edit', controller:"admin/categories",action:"edit",id:category.id ,'data-no-turbolink' => true%></td>
 
           <td><%= link_to 'Delete1',admin_categories_path(category),:method => :delete,:remote => true,:confirm => "are you sure?"%></td>
 

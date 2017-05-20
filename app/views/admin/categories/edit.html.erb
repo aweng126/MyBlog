@@ -1,6 +1,5 @@
-<%= form_for :category,controller:"admin/categories",action:"update" do |f| %>
 
-
+<%= form_for @category,url:{action: "update",id:@category.id} do |f| %>
 
     <p>
       <%= f.label :name%><br>

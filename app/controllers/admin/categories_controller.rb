@@ -31,9 +31,9 @@ class Admin::CategoriesController < ApplicationController
     @category.name=params[:category][:name]
 
     if@category.save
-      render index
+      redirect_to  controller: "admin/categories",action: "show"
     else
-      render edit
+      render
     end
   end
 
