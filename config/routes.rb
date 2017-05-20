@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    get 'categories/new'
-    post 'categories/new' ,to:"categories#create"
-  end
+  # namespace :admin do
+  #   get 'categories/new'
+  #   post 'categories/new' ,to:"categories#create"
+  #
+  # end
 
-
-  namespace :admin do
-    get 'categories/destroy'
-  end
+  #
+  # namespace :admin do
+  #   get 'categories/destroy'
+  # end
 
   # get 'posts/index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :user
     resource :sessions
+    resource :categories
     get "",to:"sessions#new"
     post "",to:"sessions#create"
   end

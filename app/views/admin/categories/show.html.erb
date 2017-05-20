@@ -1,0 +1,19 @@
+<div class="col-sm-8 blog-main">
+  <table class="table table-bordered table-hover" >
+    <tr>
+      <th>编号</th>
+      <th>目录名</th>
+    </tr>
+    <% @categories.each  do|category| %>
+        <tr>
+          <td><%= category.id %></td>
+          <td><%= category.name %></td>
+
+          <td><%= link_to 'Edit', edit_admin_categories_path(category) ,'data-no-turbolink' => true%></td>
+
+          <td><%= link_to 'Delete1',admin_categories_path(category),:method => :delete,:remote => true,:confirm => "are you sure?"%></td>
+
+        </tr>
+    <% end %>
+  </table>
+</div>
