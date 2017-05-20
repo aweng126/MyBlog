@@ -1,0 +1,22 @@
+<%= form_for :classify,url: admin_classifies_path  do |f| %>
+  <% if classify.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(classify.errors.count, "error") %> prohibited this classify from being saved:</h2>
+
+      <ul>
+      <% classify.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

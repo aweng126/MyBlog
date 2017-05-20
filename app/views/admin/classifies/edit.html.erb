@@ -1,0 +1,17 @@
+<h1>Editing Classify</h1>
+
+<%= form_for @classify,url:{action: "update",id: @classify.id} do |f| %>
+
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>
+
+
+<%= link_to 'Show', admin_classifies_path(@classify) %> |
+<%= link_to 'Back', admin_classifies_path %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Classifies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @classifies.each do |classify| %>
+      <tr>
+        <td><%= classify.name %></td>
+        <td><%= link_to 'Show', admin_classify_path(classify) %></td>
+        <td><%= link_to 'Edit', edit_admin_classify_path(classify) %></td>
+        <td><%= link_to 'Destroy',admin_classify_path(classify), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Classify', new_admin_classify_path %>

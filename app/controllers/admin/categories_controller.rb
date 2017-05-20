@@ -43,8 +43,6 @@ class Admin::CategoriesController < ApplicationController
     pp"dddfddd"
     pp params[:id]
 
-    raise params.inspect
-
     @category=Category.find_by_id(params[:id])
     @category.destroy
 

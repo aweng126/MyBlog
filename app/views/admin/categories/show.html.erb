@@ -14,9 +14,15 @@
 
           <td><%= link_to 'Edit', controller:"admin/categories",action:"edit",id:category.id ,'data-no-turbolink' => true%></td>
 
-          <td><%= link_to 'Delete',admin_categories_path(category),:method => :delete,:remote => true,:confirm => "are you sure?"%></td>
+        <!--  <td><%= link_to 'Delete',admin_categories_path,:method => :delete,id:category.id,:confirm => "are you sure?"%></td>
+-->
+          <td><%= link_to 'Delete',controller:"admin/categories",action:"destroy",method: :delete,id:category.id%></td>
 
         </tr>
     <% end %>
   </table>
+
+  <li><%= link_to '新建目录',new_admin_categories_path %></li>
+
+
 </div>
