@@ -1,7 +1,5 @@
 # 关于MyBlog项目
 
-手动的去写博客，预计时间为3天。
-
 ##记录要点
 
 1. 使用bootstap对应的博客主题，可以直接将对应代码放到view/layouts/application.html.erb中
