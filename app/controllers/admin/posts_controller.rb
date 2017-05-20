@@ -109,15 +109,14 @@ class Admin::PostsController < ApplicationController
   def about
   end
 
+
+
   def destroy
-
     pp params[:id]
-
+    pp "post  destroy"
     @post=Post.find_by_id(params[:id])
     @post.destroy
-
     render 'index'
-
   end
 
   private

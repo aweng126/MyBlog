@@ -33,7 +33,7 @@ class Admin::CategoriesController < ApplicationController
     if@category.save
       redirect_to  controller: "admin/categories",action: "show"
     else
-      render
+      render edit
     end
   end
 
@@ -43,8 +43,11 @@ class Admin::CategoriesController < ApplicationController
     pp"dddfddd"
     pp params[:id]
 
+    raise params.inspect
+
     @category=Category.find_by_id(params[:id])
     @category.destroy
+
     render index
   end
 end
